@@ -52,3 +52,100 @@ System.out.println("Olá, mundo!");
 - `System.out.println()` imprime algo na tela.
     
 - Aqui, imprime `"Olá, mundo!"` no console.
+
+# Variáveis
+## **1. O que é uma variável?**
+
+Uma variável é um **espaço na memória** do computador onde podemos armazenar um valor.  
+No Java, para criar uma variável, precisamos definir **o tipo de dado** e **o nome** da variável.
+
+### **Exemplo de variável:**
+
+```java
+
+
+`int idade = 25;`
+```
+
+Aqui, criamos uma variável chamada `idade`, que guarda o valor `25`.
+
+---
+
+## **2. Tipos de Variáveis em Java**
+
+### ✅ **1. Variáveis Primitivas (Tipos Básicos)**
+
+São os tipos mais simples e armazenam valores diretos.
+
+|Tipo|Tamanho|Descrição|
+|---|---|---|
+|`byte`|8 bits|Guarda valores pequenos (-128 a 127).|
+|`short`|16 bits|Pequenos inteiros (-32.768 a 32.767).|
+|`int`|32 bits|Inteiros mais usados (-2 bilhões a 2 bilhões).|
+|`long`|64 bits|Números inteiros muito grandes.|
+|`float`|32 bits|Números decimais (precisão menor).|
+|`double`|64 bits|Números decimais mais precisos.|
+|`char`|16 bits|Armazena um único caractere (`'A'`, `'1'`).|
+|`boolean`|1 bit|Armazena `true` ou `false`.|
+
+### **Exemplos de uso:**
+
+```java
+
+
+`byte idade = 25; short ano = 2024; int populacao = 150000; long estrelas = 10000000000L; // Precisa do "L" no final float preco = 5.99f; // Precisa do "f" no final double pi = 3.14159; char letra = 'A'; boolean ativo = true;`
+```
+
+---
+
+### ✅ **2. Variáveis de Referência (Objetos)**
+
+- Ao contrário das variáveis primitivas, as **variáveis de referência** armazenam **endereços de objetos** na memória.
+    
+- Exemplos: **String, Arrays, Classes, Objetos.**
+    
+
+### **Exemplos de uso:**
+
+```java
+
+`String nome = "Igor"; // String é um objeto int[] numeros = {1, 2, 3, 4}; // Array de inteiros Scanner scanner = new Scanner(System.in); // Objeto Scanner`
+```
+
+---
+
+## **3. Modificadores de Variáveis**
+
+Em Java, podemos modificar o comportamento das variáveis usando palavras-chave:
+
+|Modificador|Descrição|
+|---|---|
+|`final`|Torna a variável **constante** (não pode ser alterada).|
+|`static`|Pertence à classe e não a um objeto específico.|
+|`volatile`|Indica que a variável pode ser alterada por múltiplas threads.|
+
+### **Exemplo de `final`:**
+
+```java
+
+`final double PI = 3.14159; // Agora, não pode ser alterado.`
+```
+
+---
+
+## **4. Escopo das Variáveis**
+
+O **escopo** define onde a variável pode ser usada:
+
+|Tipo de Variável|Onde é Declarada|Duração|
+|---|---|---|
+|**Local**|Dentro de um método ou bloco|Só existe enquanto o método roda.|
+|**De Instância**|Dentro de uma classe, mas fora de métodos|Existe enquanto o objeto existir.|
+|**Estática**|Dentro da classe com `static`|Existe enquanto o programa roda.|
+
+### **Exemplo:**
+
+```java
+
+`public class Pessoa {     int idade; // Variável de instância (cada objeto terá uma cópia)     static String planeta = "Terra"; // Variável estática (compartilhada)      public void definirIdade(int novaIdade) {         int anoAtual = 2024; // Variável local (existe apenas dentro do método)         this.idade = novaIdade;     } }`
+```
