@@ -149,3 +149,104 @@ O **escopo** define onde a variável pode ser usada:
 
 `public class Pessoa {     int idade; // Variável de instância (cada objeto terá uma cópia)     static String planeta = "Terra"; // Variável estática (compartilhada)      public void definirIdade(int novaIdade) {         int anoAtual = 2024; // Variável local (existe apenas dentro do método)         this.idade = novaIdade;     } }`
 ```
+1. Convenção para Nomes de Variáveis
+✅ Usar camelCase → Primeira palavra minúscula, próximas com maiúscula.
+
+✅ Ser descritivo → O nome deve indicar o que a variável representa.
+
+❌ Evitar abreviações confusas → qtd pode ser quantidade.
+
+Exemplos corretos:
+java
+Copiar
+Editar
+int idade = 25;
+double precoProduto = 10.50;
+boolean estaLogado = true;
+Exemplos errados:
+java
+Copiar
+Editar
+int Idade = 25;        // ❌ Começando com maiúscula (parece classe).
+double precoproduto = 10.50; // ❌ Difícil de ler.
+boolean e = true;      // ❌ Nome muito curto e sem significado.
+2. Convenção para Nomes de Classes
+✅ Usar PascalCase → Todas as palavras começam com maiúscula.
+
+✅ Ser um substantivo → Representa um objeto ou entidade.
+
+Exemplos corretos:
+java
+Copiar
+Editar
+public class Carro { } 
+public class ContaBancaria { }
+public class UsuarioSistema { }
+Exemplos errados:
+java
+Copiar
+Editar
+public class carro { } // ❌ Deve começar com maiúscula.
+public class contabancaria { } // ❌ Sem PascalCase.
+public class usuario_sistema { } // ❌ Não usar underscore (_) em classes.
+3. Convenção para Nomes de Métodos
+✅ Usar camelCase → Primeira palavra minúscula, próximas com maiúscula.
+
+✅ Deve indicar uma ação → Normalmente começa com um verbo.
+
+Exemplos corretos:
+java
+Copiar
+Editar
+public void calcularDesconto() { }
+public int obterIdade() { }
+public boolean estaAtivo() { }
+Exemplos errados:
+java
+Copiar
+Editar
+public void CalcularDesconto() { } // ❌ Começando com maiúscula.
+public void obter_idade() { } // ❌ Não usar underscore (_) em métodos.
+public void DESCONTO() { } // ❌ Tudo em maiúsculas (parece constante).
+4. Convenção para Nomes de Constantes
+✅ Usar letras maiúsculas.
+
+✅ Separar palavras com underscore (_).
+
+✅ Usar final para garantir que o valor não será alterado.
+
+Exemplos corretos:
+java
+Copiar
+Editar
+public static final double PI = 3.14159;
+public static final int MAX_USUARIOS = 1000;
+public static final String MENSAGEM_ERRO = "Erro ao processar!";
+Exemplos errados:
+java
+Copiar
+Editar
+public static final double pi = 3.14159; // ❌ Constantes devem ser MAIÚSCULAS.
+public static final int MaxUsuarios = 1000; // ❌ Não usar PascalCase em constantes.
+public static final String mensagemErro = "Erro"; // ❌ Sem letras minúsculas.
+5. Convenção para Nomes de Pacotes
+✅ Sempre em minúsculas.
+
+✅ Usar domínio invertido (evita conflitos de nomes).
+
+✅ Sem espaços ou caracteres especiais.
+
+Exemplos corretos:
+java
+Copiar
+Editar
+package com.empresa.sistema;
+package br.com.meuprojeto.util;
+Exemplos errados:
+java
+Copiar
+Editar
+package MeuProjeto; // ❌ Deve ser minúsculo.
+package sistema.Utilidades; // ❌ Sem maiúsculas.
+package br.com.meu projeto; // ❌ Sem espaços.
+
