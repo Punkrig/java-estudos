@@ -480,3 +480,117 @@ Tabulação:	-> Aqui está
 
 Porque alguns caracteres têm **significados especiais no código** e não podem aparecer diretamente, como `"` (delimitador de string) ou `\` (usado para sequências de escape). Então o Java precisa saber quando você quer dizer literalmente `"`, `\`, ou quando você quer dizer algo como uma **quebra de linha** (`\n`).
 
+
+## 🔹 O que é um **Array** em Java?
+
+- Um **array** é uma **estrutura de dados** que armazena **múltiplos valores do mesmo tipo**.
+    
+- O tamanho do array é **fixo** após ser criado.
+    
+- Os elementos são acessados por **índice**, começando em **0**.
+    
+
+
+### ✅ Exemplo de Array Simples (1D):
+
+```java
+
+int[] numeros = new int[5]; // array com 5 posições (valores default: 0)
+
+// Atribuindo valores
+numeros[0] = 10;
+numeros[1] = 20;
+numeros[2] = 30;
+numeros[3] = 40;
+numeros[4] = 50;
+
+// Imprimindo
+System.out.println(numeros[2]); // 30
+
+```
+
+---
+
+## 🔁 Declarando e Inicializando com Valores Diretos:
+
+```java
+String[] nomes = { "Igor", "Ana", "Lucas" };  System.out.println(nomes[0]); // "Igor"`
+```
+
+---
+
+## 🔄 Percorrendo com for:
+
+```java
+
+	for (int i = 0; i < nomes.length; i++) {
+    System.out.println(nomes[i]);
+	}
+
+// Ou com for-each:
+for (String nome : nomes) {
+    System.out.println(nome);
+}
+```
+
+---
+
+## 🔷 Métodos úteis para manipulação (via utilitários):
+
+Java não tem métodos diretos em arrays como em listas, mas você pode usar:
+
+```java
+
+`import java.util.Arrays;`
+```
+
+|Método|Descrição|
+|---|---|
+|`Arrays.sort(array)`|Ordena o array|
+|`Arrays.toString(array)`|Converte array para string (para imprimir)|
+|`Arrays.copyOf(array, novoTamanho)`|Copia e redimensiona|
+|`Arrays.equals(a1, a2)`|Compara dois arrays|
+|`Arrays.fill(array, valor)`|Preenche o array com um valor|
+
+### Exemplo:
+
+```java
+
+int[] numeros = {5, 1, 3, 9}; 
+Arrays.sort(numeros); // [1, 3, 5, 9] 
+System.out.println(Arrays.toString(numeros));
+```
+
+---
+
+## 🧩 Matriz em Java (Array Bidimensional)
+
+Uma **matriz** é um **array de arrays**, ou seja, cada "linha" é um novo array.
+
+```java
+
+int[][] matriz = new int[2][3]; // 2 linhas, 3 colunas
+
+matriz[0][0] = 1;
+matriz[0][1] = 2;
+matriz[0][2] = 3;
+
+matriz[1][0] = 4;
+matriz[1][1] = 5;
+matriz[1][2] = 6;
+
+// Percorrendo com dois for
+for (int i = 0; i < matriz.length; i++) {
+    for (int j = 0; j < matriz[i].length; j++) {
+        System.out.print(matriz[i][j] + " ");
+    }
+    System.out.println();
+}
+
+```
+
+
+### Saída:
+
+`1 2 3   4 5 6`
+
