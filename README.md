@@ -372,3 +372,68 @@ Pessoa pessoa = null; // Ainda não aponta para nenhum objeto
 ```
 
 
+## 🧵 O que é uma `String`?
+
+- Em Java, `String` é uma **classe** (não é um tipo primitivo!).
+    
+- Serve para representar **cadeias de caracteres** (textos).
+    
+- É **imutável** → uma vez criada, ela **não muda**. Qualquer operação que “muda” uma string, na verdade, **cria uma nova**.
+    
+
+java
+
+CopiarEditar
+
+`String nome = "Igor";`
+
+---
+
+## 🔨 **Criação de Strings**
+
+java
+
+CopiarEditar
+
+`// Forma mais comum String nome = "Igor";  // Também funciona (usando o construtor da classe String) String nome2 = new String("Igor");`
+
+---
+
+## 🔧 **Principais Métodos para Manipular Strings**
+
+|Método|Descrição|Exemplo|
+|---|---|---|
+|`length()`|Retorna o comprimento da string|`"Igor".length()` → `4`|
+|`charAt(int index)`|Retorna o caractere na posição indicada|`"Igor".charAt(1)` → `'g'`|
+|`toUpperCase()`|Transforma tudo em maiúsculo|`"igor".toUpperCase()` → `"IGOR"`|
+|`toLowerCase()`|Transforma tudo em minúsculo|`"IGOR".toLowerCase()` → `"igor"`|
+|`substring(int start, int end)`|Pega parte da string|`"Igor".substring(1, 3)` → `"go"`|
+|`contains(String)`|Verifica se contém certo texto|`"Java é legal".contains("legal")` → `true`|
+|`equals(String)`|Compara se duas strings são iguais (case sensitive)|`"Igor".equals("igor")` → `false`|
+|`equalsIgnoreCase(String)`|Compara ignorando maiúsculas/minúsculas|`"Igor".equalsIgnoreCase("IGOR")` → `true`|
+|`replace(char, char)`|Substitui caracteres|`"bola".replace('a', 'o')` → `"bolo"`|
+|`trim()`|Remove espaços no início e fim|`" teste ".trim()` → `"teste"`|
+|`split(String regex)`|Divide a string em partes|`"a,b,c".split(",")` → `["a", "b", "c"]`|
+|`startsWith(String)`|Verifica se começa com...|`"Java".startsWith("Ja")` → `true`|
+|`endsWith(String)`|Verifica se termina com...|`"programa".endsWith("ma")` → `true`|
+
+---
+
+## 📌 Exemplo Prático
+
+java
+
+CopiarEditar
+
+`public class TesteString {     public static void main(String[] args) {         String frase = "  Java é divertido!  ";          System.out.println(frase.length()); // 22         System.out.println(frase.trim()); // "Java é divertido!"         System.out.println(frase.toUpperCase()); // "  JAVA É DIVERTIDO!  "         System.out.println(frase.contains("divertido")); // true         System.out.println(frase.substring(2, 6)); // "Java"     } }`
+
+---
+
+## 🚫 Lembrete: String é imutável
+
+java
+
+CopiarEditar
+
+`String nome = "Igor"; nome.toUpperCase(); System.out.println(nome); // Ainda é "Igor" ❌  nome = nome.toUpperCase(); // Agora sim ✅ System.out.println(nome); // "IGOR"`
+
