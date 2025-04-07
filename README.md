@@ -371,32 +371,15 @@ Se uma variável de referência **não aponta pra nada**, ela tem valor `null`.
 Pessoa pessoa = null; // Ainda não aponta para nenhum objeto
 ```
 
-
-## 🧵 O que é uma `String`?
-
-- Em Java, `String` é uma **classe** (não é um tipo primitivo!).
-    
-- Serve para representar **cadeias de caracteres** (textos).
-    
-- É **imutável** → uma vez criada, ela **não muda**. Qualquer operação que “muda” uma string, na verdade, **cria uma nova**.
-    
-
-java
-
-CopiarEditar
-
-`String nome = "Igor";`
-
----
-
 ## 🔨 **Criação de Strings**
 
-java
+```java
 
-CopiarEditar
+ 
+String nome = "Igor";  // Forma mais comum
+nome2 = new String("Igor");// Também funciona (usando o construtor da classe String) String
 
-`// Forma mais comum String nome = "Igor";  // Também funciona (usando o construtor da classe String) String nome2 = new String("Igor");`
-
+```
 ---
 
 ## 🔧 **Principais Métodos para Manipular Strings**
@@ -421,19 +404,28 @@ CopiarEditar
 
 ## 📌 Exemplo Prático
 
-java
+```java
+public class TesteString {
+    public static void main(String[] args) {
+        String frase = "  Java é divertido!  ";
 
-CopiarEditar
+        System.out.println(frase.length()); // 22
+        System.out.println(frase.trim()); // "Java é divertido!"
+        System.out.println(frase.toUpperCase()); // "  JAVA É DIVERTIDO!  "
+        System.out.println(frase.contains("divertido")); // true
+        System.out.println(frase.substring(2, 6)); // "Java"
+    }
+}
 
-`public class TesteString {     public static void main(String[] args) {         String frase = "  Java é divertido!  ";          System.out.println(frase.length()); // 22         System.out.println(frase.trim()); // "Java é divertido!"         System.out.println(frase.toUpperCase()); // "  JAVA É DIVERTIDO!  "         System.out.println(frase.contains("divertido")); // true         System.out.println(frase.substring(2, 6)); // "Java"     } }`
-
+```
 ---
 
 ## 🚫 Lembrete: String é imutável
 
-java
+```java
 
-CopiarEditar
-
-`String nome = "Igor"; nome.toUpperCase(); System.out.println(nome); // Ainda é "Igor" ❌  nome = nome.toUpperCase(); // Agora sim ✅ System.out.println(nome); // "IGOR"`
-
+String nome = "Igor"; 
+nome.toUpperCase(); 
+System.out.println(nome); // Ainda é "Igor" ❌  
+nome = nome.toUpperCase(); // Agora sim ✅ System.out.println(nome); // "IGOR"`
+```
