@@ -672,3 +672,79 @@ public class ExemploConstantes {
 }
 ```
 
+## ➕ Operadores Aritméticos em Java
+
+|Operador|Símbolo|Exemplo|Significado|
+|---|---|---|---|
+|Soma|`+`|`a + b`|Soma dois valores|
+|Subtração|`-`|`a - b`|Subtrai b de a|
+|Multiplicação|`*`|`a * b`|Multiplica|
+|Divisão|`/`|`a / b`|Divide (inteiros ou decimais)|
+|Módulo|`%`|`a % b`|Resto da divisão|
+
+---
+
+## ⚠️ Observações importantes:
+
+- Se **ambos os operandos** forem inteiros (`int`), o resultado da divisão será um **inteiro** (sem casas decimais):
+    
+    java
+    
+    CopiarEditar
+    
+    `int resultado = 7 / 2; // resultado = 3, não 3.5!`
+    
+- Para obter resultado com casas decimais, **use `double` ou `float`**:
+    
+    java
+    
+    CopiarEditar
+    
+    `double resultado = 7.0 / 2; // resultado = 3.5`
+    
+
+---
+
+## 🔄 Exemplo completo:
+
+```java
+
+public class Operadores {
+    public static void main(String[] args) {
+        int a = 10;
+        int b = 3;
+
+        System.out.println("Soma: " + (a + b));         // 13
+        System.out.println("Subtração: " + (a - b));    // 7
+        System.out.println("Multiplicação: " + (a * b));// 30
+        System.out.println("Divisão: " + (a / b));      // 3
+        System.out.println("Módulo: " + (a % b));       // 1
+    }
+}
+```
+
+---
+
+## 🔢 Ordem de Operações (Precedência)
+
+Java segue regras semelhantes às da matemática (lembra do **PEMDAS**?):
+
+1. **Parênteses** `()`
+ 
+2. **Multiplicação**, **Divisão**, **Módulo** `* / %`
+    
+3. **Soma** e **Subtração** `+ -`
+    
+4. **Esquerda para a direita** (ordem associativa)
+    
+
+---
+
+### 🎯 Exemplo:
+
+```java
+
+`int resultado = 10 + 2 * 3; // resultado = 10 + 6 = 16  int resultado2 = (10 + 2) * 3; // resultado = 12 * 3 = 36`
+
+```
+**→ Use parênteses sempre que quiser garantir a ordem certa** e evitar confusão!
