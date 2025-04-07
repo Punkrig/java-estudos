@@ -429,3 +429,54 @@ nome.toUpperCase();
 System.out.println(nome); // Ainda é "Igor" ❌  
 nome = nome.toUpperCase(); // Agora sim ✅ System.out.println(nome); // "IGOR"`
 ```
+## ✨ O que são **Caracteres Especiais** em Strings?
+
+Em Java, dentro de uma string (entre aspas `"`), alguns caracteres **não podem ser usados diretamente** ou têm significados especiais (como `\n` para nova linha). Por isso, usamos **sequências de escape** com uma **barra invertida** (`\`) pra representar eles.
+
+---
+
+## 🧩 **Principais Caracteres Especiais (Escape Sequences)**
+
+|Sequência|Significado|Exemplo|
+|---|---|---|
+|`\n`|Quebra de linha (newline)|`"Olá\nMundo"` →  <br>Olá  <br>Mundo|
+|`\t`|Tabulação (tab)|`"Nome:\tIgor"` → Nome: Igor|
+|`\"`|Aspas duplas dentro de string|`"Ele disse: \"Oi!\""` → Ele disse: "Oi!"|
+|`\'`|Aspas simples (quando precisa delas)|`'\'a\''` → `'a'` (menos comum em string, mais em `char`)|
+|`\\`|Barra invertida (`\`)|`"C:\\Users\\Igor"`|
+|`\r`|Retorno de carro (carriage return)|Raramente usado sozinho|
+|`\b`|Backspace (apaga o último caractere)|Pouco usado também|
+|`\f`|Avanço de formulário|Muito raro|
+
+---
+
+## 📌 Exemplos na prática:
+
+```java
+public class CaracteresEspeciais {
+    public static void main(String[] args) {
+        System.out.println("Olá,\nmeu nome é Igor."); // quebra de linha
+        System.out.println("Caminho: C:\\Programas\\Java"); // barra invertida
+        System.out.println("Ele disse: \"Java é legal!\""); // aspas duplas
+        System.out.println("Tabulação:\t-> Aqui está"); // tabulação
+    }
+}
+```
+
+
+
+
+
+### Saída:
+
+```makefile
+Olá,
+meu nome é Igor.
+Caminho: C:\Programas\Java
+Ele disse: "Java é legal!"
+Tabulação:	-> Aqui está
+```
+## 🧠 Dica: Por que isso existe?
+
+Porque alguns caracteres têm **significados especiais no código** e não podem aparecer diretamente, como `"` (delimitador de string) ou `\` (usado para sequências de escape). Então o Java precisa saber quando você quer dizer literalmente `"`, `\`, ou quando você quer dizer algo como uma **quebra de linha** (`\n`).
+
