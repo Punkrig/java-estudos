@@ -325,7 +325,22 @@ Pessoa pessoa = new Pessoa();
 ```java
 
 
-`public class Pessoa {     String nome; }  public class Main {     public static void main(String[] args) {         Pessoa p1 = new Pessoa();         p1.nome = "Igor";          Pessoa p2 = p1; // p2 aponta pro mesmo objeto que p1          p2.nome = "Ana";          System.out.println(p1.nome); // Vai imprimir "Ana"     } }`
+public class Pessoa {
+    String nome;
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Pessoa p1 = new Pessoa();
+        p1.nome = "Igor";
+
+        Pessoa p2 = p1; // p2 aponta pro mesmo objeto que p1
+
+        p2.nome = "Ana";
+
+        System.out.println(p1.nome); // Vai imprimir "Ana"
+    }
+}
 ```
 
 ➡️ **Por quê?**  
