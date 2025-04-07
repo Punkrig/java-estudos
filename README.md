@@ -594,3 +594,81 @@ for (int i = 0; i < matriz.length; i++) {
 
 `1 2 3   4 5 6`
 
+## 🧱 O que é uma constante?
+
+Uma **constante** em Java é uma **variável cujo valor não pode ser alterado** depois de ser definido. Para declarar uma constante, usamos a **palavra-chave `final`**.
+
+```java
+
+final int IDADE_MINIMA = 18;
+```
+
+> Uma vez que você define esse valor, **nunca mais pode mudar** no resto do programa!
+
+---
+
+## 🔐 Por que usar constantes?
+
+- Evita **repetição de valores fixos** no código.
+    
+- Facilita a **manutenção** (você muda em um lugar só).
+    
+- Evita **erros** (alguém mudar sem querer um valor que deveria ser fixo).
+    
+- Deixa o código mais **legível e expressivo**.
+    
+
+---
+
+## 🧠 Como declarar constantes
+
+```java
+
+final tipo NOME = valor;
+```
+
+Exemplos:
+
+```java
+
+final double PI = 3.14159; 
+final int LIMITE_USUARIOS = 100; 
+final String NOME_DO_SISTEMA = "MinhaApp";
+```
+
+---
+
+## 🧾 Convenção de nomes para constantes
+
+🔠 Em Java, a convenção para constantes é:
+
+- **Nome em CAIXA ALTA** (letras maiúsculas)
+    
+- **Separadas por underscores** (`_`)
+    
+- Usa-se nomes descritivos
+    
+
+```java
+`final int MAX_TENTATIVAS = 5; final double TAXA_JUROS = 0.1;`
+```
+
+---
+
+## 🧪 Exemplo de uso:
+
+```java
+
+public class ExemploConstantes {
+    public static void main(String[] args) {
+        final double PI = 3.14159;
+        final int MAX_VIDAS = 3;
+
+        System.out.println("Valor de PI: " + PI);
+        System.out.println("Máximo de vidas: " + MAX_VIDAS);
+
+        // PI = 3.14; // ❌ Erro! Não pode mudar o valor de uma constante
+    }
+}
+```
+
