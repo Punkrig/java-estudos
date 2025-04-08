@@ -748,3 +748,111 @@ Java segue regras semelhantes às da matemática (lembra do **PEMDAS**?):
 
 ```
 **→ Use parênteses sempre que quiser garantir a ordem certa** e evitar confusão!
+
+## 🔁 O que é **casting**?
+
+**Casting** (ou **type casting**) é quando você **converte um valor de um tipo para outro tipo**.
+
+### Existem dois tipos:
+
+1. **Casting implícito (automático)** — feito pelo Java quando **não há perda de informação**
+    
+2. **Casting explícito (manual)** — feito por você, quando **há risco de perda de dados**
+    
+
+---
+
+## 📌 1. **Casting implícito** (widening / promoção de tipo)
+
+Java faz automaticamente quando converte de um tipo **menor para um maior**:
+
+```java
+
+int num = 10; double resultado = num;  // int → double (OK)
+```
+
+Outros exemplos válidos:
+
+- `byte → short → int → long → float → double`
+    
+
+---
+
+## 📌 2. **Casting explícito** (narrowing / redução de tipo)
+
+Feito **manualmente**, com risco de **perda de precisão ou estouro**:
+
+```java
+
+double valor = 9.99; int inteiro = (int) valor;  // perde os decimais (inteiro = 9)
+```
+
+Outros exemplos:
+
+```java
+
+long numeroGrande = 100000L; int numeroPequeno = (int) numeroGrande;
+```
+
+---
+
+## 🎯 Exemplos práticos:
+
+```java
+
+public class CastingExemplo {
+    public static void main(String[] args) {
+        int a = 10;
+        double b = a;  // implícito
+        System.out.println("int para double: " + b);
+
+        double x = 5.7;
+        int y = (int) x;  // explícito
+        System.out.println("double para int: " + y);
+    }
+}
+
+```
+
+---
+
+## 🧠 Também dá pra fazer casting com:
+
+### 🔡 **char ↔ int**
+
+```java
+
+char letra = 'A';
+int codigo = (int) letra; // resultado: 65
+System.out.println(codigo);
+
+int codigo2 = 66;
+char letra2 = (char) codigo2; // resultado: 'B'
+System.out.println(letra2);
+
+```
+
+### 📦 **Casting entre objetos (tipos de referência)**
+
+Só funciona entre **classes relacionadas (herança)**.
+
+```java
+class Animal {}
+class Cachorro extends Animal {}
+
+Animal a = new Cachorro();  // upcasting (implícito)
+Cachorro c = (Cachorro) a;  // downcasting (explícito)
+
+```
+
+
+⚠️ Downcasting precisa ser feito com cuidado — pode causar `ClassCastException`.
+
+---
+
+## 🚨 Dica: cuidado com **perda de dados**!
+
+```java
+
+int valor = 130; byte b = (byte) valor; // b = -126 (overflow) System.out.println(b);
+```
