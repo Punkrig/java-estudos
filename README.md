@@ -944,3 +944,96 @@ public class MathDemo {
 }
 
 ```
+
+## 📦 Onde fica `NumberFormat`?
+
+Ela faz parte do pacote:
+
+`import java.text.NumberFormat;`
+
+Você também pode usar com:
+
+`import java.util.Locale;`
+
+pra escolher o idioma e estilo numérico.
+
+---
+
+## 🧠 Principais usos do `NumberFormat`
+
+### 💰 1. **Formato de moeda**
+
+```java
+
+NumberFormat formatoMoeda = NumberFormat.getCurrencyInstance(); String valorFormatado = formatoMoeda.format(1234.56); System.out.println(valorFormatado);  // Ex: R$ 1.234,56
+```
+
+💡 Você pode trocar o idioma com `Locale`:
+
+```java
+
+NumberFormat moedaUS = NumberFormat.getCurrencyInstance(Locale.US); System.out.println(moedaUS.format(1234.56));  // $1,234.56
+```
+
+---
+
+### 📊 2. **Formato de porcentagem**
+```java
+
+NumberFormat formatoPorcentagem = NumberFormat.getPercentInstance(); String porcentagem = formatoPorcentagem.format(0.75);  // 75% System.out.println(porcentagem);
+```
+
+---
+
+### 🔢 3. **Formatar com número fixo de casas decimais**
+
+```java
+
+NumberFormat nf = NumberFormat.getInstance(); nf.setMinimumFractionDigits(2); nf.setMaximumFractionDigits(2);  System.out.println(nf.format(12.3456));  // 12,35
+
+```
+---
+
+## 🔄 Usando com Locale (idiomas diferentes)
+
+```java
+
+NumberFormat formatoFR = NumberFormat.getCurrencyInstance(Locale.FRANCE); System.out.println(formatoFR.format(1234.56));  // 1 234,56 €
+```
+
+📚 Alguns `Locale` comuns:
+
+|País|Locale|
+|---|---|
+|Brasil|`new Locale("pt", "BR")`|
+|EUA|`Locale.US`|
+|França|`Locale.FRANCE`|
+|Alemanha|`Locale.GERMANY`|
+
+---
+
+## ✅ Exemplo completo:
+
+```java
+
+import java.text.NumberFormat;
+import java.util.Locale;
+
+public class Formatador {
+    public static void main(String[] args) {
+        double numero = 1234.567;
+
+        NumberFormat moedaBR = NumberFormat.getCurrencyInstance(new Locale("pt", "BR"));
+        NumberFormat porcentagem = NumberFormat.getPercentInstance();
+        NumberFormat decimal = NumberFormat.getInstance();
+
+        porcentagem.setMinimumFractionDigits(1);
+        decimal.setMaximumFractionDigits(2);
+
+        System.out.println("Moeda (BR): " + moedaBR.format(numero));
+        System.out.println("Porcentagem: " + porcentagem.format(0.87));
+        System.out.println("Decimal arredondado: " + decimal.format(numero));
+    }
+}
+
+```
