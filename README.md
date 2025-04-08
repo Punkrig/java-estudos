@@ -856,3 +856,91 @@ Cachorro c = (Cachorro) a;  // downcasting (explícito)
 
 int valor = 130; byte b = (byte) valor; // b = -126 (overflow) System.out.println(b);
 ```
+
+## 📘 O que é a `Math` class?
+
+A `Math` é uma **classe utilitária** da `java.lang`, ou seja, já está **importada por padrão**, e traz vários **métodos estáticos** (você não precisa instanciar ela) pra fazer cálculos matemáticos.
+
+---
+
+## 🧮 Principais métodos da classe `Math`
+
+### 🔢 1. **Potência e raízes**
+
+|Método|Descrição|Exemplo|
+|---|---|---|
+|`Math.pow(x, y)`|x elevado à potência y|`Math.pow(2, 3)` → `8.0`|
+|`Math.sqrt(x)`|Raiz quadrada de x|`Math.sqrt(9)` → `3.0`|
+
+---
+
+### ➕➖ 2. **Valor absoluto e sinais**
+
+|Método|Descrição|Exemplo|
+|---|---|---|
+|`Math.abs(x)`|Valor absoluto (sem sinal)|`Math.abs(-5)` → `5`|
+|`Math.signum(x)`|Retorna -1, 0 ou 1 conforme o sinal|`Math.signum(-10)` → `-1.0`|
+
+---
+
+### ⬆️⬇️ 3. **Arredondamento**
+
+|Método|Descrição|Exemplo|
+|---|---|---|
+|`Math.round(x)`|Arredonda pro mais próximo|`Math.round(3.6)` → `4`|
+|`Math.floor(x)`|Arredonda pra baixo|`Math.floor(3.9)` → `3.0`|
+|`Math.ceil(x)`|Arredonda pra cima|`Math.ceil(3.1)` → `4.0`|
+
+---
+
+### 🎲 4. **Aleatoriedade**
+
+|Método|Descrição|Exemplo|
+|---|---|---|
+|`Math.random()`|Retorna valor `double` entre 0.0 e 1.0|`Math.random()` → `0.73` (por exemplo)|
+
+💡 Exemplo de número aleatório entre 0 e 99:
+
+java
+
+CopiarEditar
+
+`int aleatorio = (int)(Math.random() * 100);`
+
+---
+
+### 📈 5. **Trigonometria** (em radianos!)
+
+|Método|Descrição|Exemplo|
+|---|---|---|
+|`Math.sin(x)`|Seno de x (em radianos)|`Math.sin(Math.PI/2)` → `1.0`|
+|`Math.cos(x)`|Cosseno de x|`Math.cos(0)` → `1.0`|
+|`Math.tan(x)`|Tangente de x|`Math.tan(...)`|
+
+---
+
+## 💎 Constantes da classe `Math`
+
+|Constante|Valor aproximado|Descrição|
+|---|---|---|
+|`Math.PI`|`3.141592653...`|Pi (π)|
+|`Math.E`|`2.718281828...`|Euler (e)|
+
+---
+
+## 🧪 Exemplo prático:
+
+```java
+public class MathDemo {
+    public static void main(String[] args) {
+        double base = 2;
+        double exp = 3;
+        System.out.println("Potência: " + Math.pow(base, exp));
+        System.out.println("Raiz de 25: " + Math.sqrt(25));
+        System.out.println("Aleatório: " + Math.random());
+        System.out.println("PI: " + Math.PI);
+        System.out.println("Arredondado: " + Math.round(3.6));
+    }
+}
+
+```
