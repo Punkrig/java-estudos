@@ -1108,3 +1108,62 @@ Quando você usa `nextInt()` ou `nextDouble()` **e depois `nextLine()`**, pode t
 Adicione um `sc.nextLine()` extra depois de ler números, antes de ler uma linha:
 
 `int idade = sc.nextInt(); sc.nextLine(); // limpa a quebra de linha String nome = sc.nextLine(); // agora lê certinho`
+
+## 🔍 **Operadores de Comparação**
+
+Eles comparam dois valores e **retornam um booleano** (`true` ou `false`):
+
+|Operador|Significado|Exemplo (`a = 5, b = 3`)|Resultado|
+|---|---|---|---|
+|`==`|Igual a|`a == b`|`false`|
+|`!=`|Diferente de|`a != b`|`true`|
+|`>`|Maior que|`a > b`|`true`|
+|`<`|Menor que|`a < b`|`false`|
+|`>=`|Maior ou igual a|`a >= b`|`true`|
+|`<=`|Menor ou igual a|`a <= b`|`false`|
+
+---
+
+## 🔗 **Operadores Lógicos**
+
+São usados para **combinar condições booleanas**:
+
+| Operador | Nome                | Exemplo          |
+| -------- | ------------------- | ---------------- |
+| `&&`     | E (AND)             | `a > 3 && b < 5` |
+| `\|\|`   | OU(OR)              | `a>3 \|\| b<5`   |
+| `!`      | NÃO (NOT - inverte) | `!(a > 3)`       |
+
+---
+
+## 🧪 Exemplo prático
+
+```java
+public class ComparacaoLogica {
+    public static void main(String[] args) {
+        int a = 5;
+        int b = 3;
+
+        System.out.println("a == b? " + (a == b));      // false
+        System.out.println("a != b? " + (a != b));      // true
+        System.out.println("a > b && b < 10? " + (a > b && b < 10));  // true
+        System.out.println("!(a > b)? " + !(a > b));    // false
+    }
+}
+
+```
+
+
+---
+
+## 🔥 Dica visual:
+
+```java
+
+// Operadores de comparação:     
+-> Sempre retornam true ou false // 
+5 == 5 → true // 5 > 10 → false  // 
+Operadores lógicos:            
+-> Combinam comparações // 
+(5 > 3 && 10 > 2) → true // (5 < 3 || 10 > 2) → true
+```
