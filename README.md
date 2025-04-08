@@ -1247,3 +1247,145 @@ System.out.println(status);
 |`if / else`|Quando as condições forem **booleanas** ou envolverem **intervalos**|
 |`switch`|Quando tiver **múltiplos casos fixos**, como menu ou dias da semana|
 |`? :` (ternário)|Para **condições simples**, geralmente em uma única linha|
+
+## 🔁 1. `for` Loop
+
+É usado quando você **sabe quantas vezes** quer repetir algo.
+
+### 📌 Estrutura:
+
+```java
+
+for (inicialização; condição; atualização) {     
+
+// código a repetir 
+
+}
+```
+
+### 🧪 Exemplo:
+
+```java
+
+for (int i = 0; i < 5; i++) {     
+	System.out.println("i vale: " + i); 
+}
+```
+
+---
+
+## 🔁 2. `while` Loop
+
+Usado quando você **não sabe quantas vezes** o loop vai rodar, mas sabe a **condição** que precisa ser verdadeira.
+
+### 📌 Estrutura:
+
+```java
+
+while (condição) {     
+	// código enquanto condição for verdadeira 
+}
+
+```
+### 🧪 Exemplo:
+
+```java
+
+int i = 0; 
+while (i < 5) {     
+	System.out.println("i vale: " + i);     
+	i++; 
+}
+```
+
+---
+
+## 🔁 3. `do...while` Loop
+
+Quase igual ao `while`, **mas garante que o bloco roda pelo menos uma vez**, mesmo que a condição seja falsa.
+
+### 📌 Estrutura:
+
+```java
+
+do {     
+	// código que será executado 
+	} 
+while (condição);
+
+```
+### 🧪 Exemplo:
+
+```java
+
+int i = 0; 
+do {     
+	System.out.println("i vale: " + i);     
+	i++; } 
+while (i < 5);
+```
+
+---
+
+## 🛑 4. `break` e `continue`
+
+### 🔴 `break` → sai do loop imediatamente
+
+```java
+
+for (int i = 0; i < 10; i++) {     
+	if (i == 5) 
+	break;     
+	System.out.println(i); // vai de 0 a 4 
+}
+```
+
+### 🔁 `continue` → pula para a próxima iteração
+
+```java
+
+for (int i = 0; i < 5; i++) {     
+	if (i == 2) 
+	continue;     
+	System.out.println(i); // pula o 2 
+}
+```
+
+---
+
+## 🔁 5. `for-each` Loop (enhanced for)
+
+Usado para **percorrer arrays ou coleções** de forma simples.
+
+### 📌 Estrutura:
+
+```java
+
+for (Tipo elemento : coleção) {     
+	// usar elemento 
+}
+```
+
+### 🧪 Exemplo:
+
+```java
+
+String[] frutas = {"Maçã", "Banana", "Uva"};  
+for (String fruta : frutas) {     
+	System.out.println(fruta); 
+}
+```
+
+---
+
+## ✅ Resumo rápido:
+
+|Tipo de loop|Quando usar|
+|---|---|
+|`for`|Quando sabe quantas vezes|
+|`while`|Quando repete **enquanto** condição for verdadeira|
+|`do...while`|Quando precisa **executar pelo menos uma vez**|
+|`for-each`|Para percorrer arrays/coleções|
+|`break`|Para sair do loop|
+|`continue`|Para pular a iteração atual|
+
