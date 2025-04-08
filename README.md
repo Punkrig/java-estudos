@@ -1167,3 +1167,83 @@ Operadores lógicos:
 -> Combinam comparações // 
 (5 > 3 && 10 > 2) → true // (5 < 3 || 10 > 2) → true
 ```
+
+## 🧱 1. `if`, `else if`, `else`
+
+Serve para executar **blocos diferentes de código** com base em **condições booleanas** (`true` ou `false`).
+
+### 🧪 Exemplo:
+
+```java
+
+int idade = 18;  
+if (idade < 18) {     
+	System.out.println("Menor de idade"); 
+} 
+else if (idade == 18) {     
+	System.out.println("Tem exatamente 18 anos"); 
+} 
+else {     
+	System.out.println("Maior de idade"); 
+	}
+
+```
+---
+
+## 🔀 2. `switch`
+
+É usado quando você quer **comparar uma variável com vários valores possíveis**. Funciona bem com `int`, `char`, `String`, `enum`, etc.
+
+### 🧪 Exemplo:
+
+```java
+
+int dia = 3;  
+switch (dia) {     
+	case 1:         
+		System.out.println("Domingo");         
+		break;     
+	case 2:         
+		System.out.println("Segunda-feira");         
+		break;     
+	case 3:         
+		System.out.println("Terça-feira");         
+		break;     
+	default:         
+		System.out.println("Dia inválido"); }
+```
+
+💡 **Importante:**
+
+- Use `break` pra **evitar cair nos próximos casos**
+    
+- Use `default` para tratar valores **não previstos**
+    
+
+---
+
+## ⚡ 3. Operador Ternário (`? :`)
+
+É uma forma **curta e rápida** de escrever um `if-else`. Ele retorna um valor com base em uma condição.
+
+### 🧪 Exemplo:
+
+```java
+
+int idade = 20; String status = (idade >= 18) ? "Maior de idade" : "Menor de idade"; 
+System.out.println(status);
+```
+
+### 📌 Sintaxe geral:
+
+`condição ? valorSeVerdadeiro : valorSeFalso;`
+
+---
+
+## 🧠 Comparativo
+
+|Estrutura|Quando usar|
+|---|---|
+|`if / else`|Quando as condições forem **booleanas** ou envolverem **intervalos**|
+|`switch`|Quando tiver **múltiplos casos fixos**, como menu ou dias da semana|
+|`? :` (ternário)|Para **condições simples**, geralmente em uma única linha|
