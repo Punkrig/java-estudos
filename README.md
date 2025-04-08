@@ -1037,3 +1037,74 @@ public class Formatador {
 }
 
 ```
+
+## 📥 Como ler entradas em Java com `Scanner`
+
+### 1️⃣ Primeiro, você importa a classe:
+
+
+`import java.util.Scanner;`
+
+---
+
+### 2️⃣ Depois, você cria um objeto `Scanner`:
+
+
+`Scanner sc = new Scanner(System.in);`
+
+> Esse `System.in` diz que você quer ler do teclado (entrada padrão).
+
+---
+
+### 3️⃣ Agora você pode ler diferentes tipos de dados:
+
+|Tipo de dado|Método do Scanner|Exemplo|
+|---|---|---|
+|Texto (1 palavra)|`next()`|`sc.next()`|
+|Linha inteira|`nextLine()`|`sc.nextLine()`|
+|Inteiro|`nextInt()`|`sc.nextInt()`|
+|Decimal (double)|`nextDouble()`|`sc.nextDouble()`|
+|Booleano|`nextBoolean()`|`sc.nextBoolean()`|
+
+---
+
+## 🧪 Exemplo prático
+
+```java
+
+import java.util.Scanner;
+
+public class EntradaDeDados {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Digite seu nome: ");
+        String nome = sc.nextLine();
+
+        System.out.print("Digite sua idade: ");
+        int idade = sc.nextInt();
+
+        System.out.print("Digite sua altura: ");
+        double altura = sc.nextDouble();
+
+        System.out.println("Nome: " + nome);
+        System.out.println("Idade: " + idade);
+        System.out.println("Altura: " + altura);
+
+        sc.close(); // sempre bom fechar o Scanner!
+    }
+}
+
+```
+
+---
+
+## ⚠️ Dica importante:
+
+Quando você usa `nextInt()` ou `nextDouble()` **e depois `nextLine()`**, pode ter um problema de "pular linha", porque o `nextInt()` **não consome o `\n`** do Enter.
+
+### 🛠️ Solução:
+
+Adicione um `sc.nextLine()` extra depois de ler números, antes de ler uma linha:
+
+`int idade = sc.nextInt(); sc.nextLine(); // limpa a quebra de linha String nome = sc.nextLine(); // agora lê certinho`
